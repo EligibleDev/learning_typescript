@@ -14,3 +14,7 @@ Typing `tsc` everytime is tough. So we just have to enable the `tsc -w` watch fl
 # Lesson 3
 
 When we declare and assign a value to a variable at the same time, the type of the value becomes the type of the variable. And if we try to assign another type of value to that variable, it shows error. Because typescript is smart.
+
+But if we just declare the variable not assign anything then typescript sets the type to `any` which results in assigning to any type of value in future.
+
+Same thing happens with objects and arrays as well. if we try to put a different type to a arrays element or a objects property than the one that got firstly set by typescript, we gonna get error.
