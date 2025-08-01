@@ -8,3 +8,5 @@ sounds kinda complicated but i suppose its due to my poor language skills.
 The tsconfig is a vast config file. We can control many things with it. Like where our ts files are located and where the compiled js files should be etc.
 
 Since we've configured where our ts files are located, from now on we don't have to provide the file name after the tsc command. We now just have to type the tsc command.
+
+Typing tsc everytime is tough. So we just have to enable the 'tsc -w" watch flag. which will compile all the ts files right after we save it.
