@@ -1,36 +1,44 @@
-// strings
-let fighter = "makhachev";
-fighter = "aspinall";
-// fighter = 45
-// this will result error cuz if declared and assigned once, we cant put another type of value
-
-// function parameters
-const multiply = (num1: number, num2: number) => {
-    return num1 * num2;
-};
-
-const answer = multiply(34, 12);
-console.log(answer);
-
 // arrays
-const fighters = ["makhachev", "topuria", "tsarukyan", "jdm"];
+const arrayOfNumbers: number[] = [];
 
-fighters.push("gaethje");
-// fighters.push(23);
-// error because typescript has set the arrays type to 'an array of strings only'
+arrayOfNumbers.push(234);
+// arrayOfNumbers.push("mikail")
+// NOTE: gonna show error cuz we defined the its gonna be a array of numbers.
 
-const mixed = ["Mikail", false, []];
-mixed.push(true);
-// mixed.push({})
-// cant push the object because typescript has set the arrays type in a way that it can only accept string, boolean, and arrays.
+//union types in an array
+const stringNumberArray: (string | number)[] = [];
+stringNumberArray.push("bear");
+stringNumberArray.push(34);
+// stringNumberArray.push(true)
+// NOTE: will show errors cuz we only allowed the array to contain strings and numbers
 
 // objects
-const fighterDetails = {
-    name: "Mikail",
-    division: 170,
-    ranked: true,
+let person: {
+    name: string;
+    age: number;
+    isMarried: boolean;
 };
 
-fighterDetails.name = "makhachev";
-// fighterDetails.name= true
-// it happens with objects also, if you try to set a value of something to another type than the one typescript set, you gonna get an error.
+person = {
+    name: "mikail",
+    age: 34,
+    isMarried: true,
+};
+
+// person = {
+//     name: "mikail",
+//     age: 23,
+//     isMarried: [],
+// };
+// NOTE: the array is not set as an acceptable type for isMarried.
+
+// person = {
+//     name: "badhon"
+// }
+// NOTE: we didn't set the value of all the properties of the object.
+
+let object: object;
+
+object = [];
+// NOTE: this will not show an error because arrays are a type of object in javascript. so when defining
+// NOTE: objects we have to define a specific pattern like {} with properties.
