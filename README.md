@@ -26,3 +26,15 @@ When defining objects and arrays we can set the type of each property or which t
 # Lesson 5
 
 When we declare a variable it is set to any by default. or we can also explicitly set `: any` to the variable. But its not a good practice since the point of using typescript is to prevent this behavior.
+
+# Lesson 6
+
+When defining functions we have to use the type `Function`. Now, the reason its capitalized is cause the word `function` is a keyword in javascript. just like `String`. that's why, to prevent collision typescript uses `Function`, `string` etc.
+
+To make an optional parameter we have to use `?:` instead of just `:` before setting the type.
+
+We can also set a default value of a parameter by using `=` after it. Tho its a javascript feature I really forgot about it and thought worth mentioning.
+
+By default js returns `undefined` if we don't return anything ourself. But ts returns `void` by default.
+
+Typescript can also predict what will the type of the return of the function will be based on the operations we do inside the function.

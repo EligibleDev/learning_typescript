@@ -1,24 +1,29 @@
-// strings
-let fighter = "makhachev";
-fighter = "aspinall";
-// fighter = 45
-// this will result error cuz if declared and assigned once, we cant put another type of value
-// function parameters
+let myFunc;
+myFunc = () => {
+    console.log("hellow");
+};
+// parameters
+const printNames = (name1, name2) => {
+    console.log(`welcome ${name1} and ${name2}`);
+};
+printNames("razib", "shajib");
+// printNames(3, "tomal")
+// NOTE: error cuz we can only pass strings in the parameters.
+// optional parameters
+const showNewStudents = (std1, std2) => {
+    const welcomeMsg = `welcome ${std1} ${std2 ? `and ${std2}` : ""}`;
+    console.log(welcomeMsg);
+};
+showNewStudents("belal", "umar");
+showNewStudents("habib");
+// NOTE: to make an optional parameter u have to use `?:` before setting the type
+// return type
 const multiply = (num1, num2) => {
     return num1 * num2;
+    // return "string";
+    // NOTE: error because we are declaring that the function will return a number.
 };
-const answer = multiply(34, 12);
-console.log(answer);
-// arrays
-const fighters = ["makhachev", "topuria", "tsarukyan", "jdm"];
-fighters.push("gaethje");
-// fighters.push(23);
-// error because typescript has set the arrays type to 'an array of strings only'
-const mixed = ["Mikail", false, []];
-mixed.push(true);
-// mixed.push({})
-// cant push the object because typescript has set the arrays type in a way that it can only accept string, boolean, and arrays.
-// objects
-const fighter = {};
+multiply(23, 43);
 export {};
+// NOTE: if we hover over this function it will now say => number since typescript can predict the outcome
 //# sourceMappingURL=app.js.map
