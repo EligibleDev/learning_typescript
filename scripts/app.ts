@@ -1,25 +1,5 @@
-// enums
+// tuples
 
-enum citizenType {
-    illiterate,
-    poor,
-    middleClass,
-    rich,
-    billionaire,
-}
+const myTuple: [number, boolean, string] = [1, false, "hello"];
 
-interface citizen<T> {
-    name: string;
-    age: number;
-    citizenType: T;
-}
-
-const newCitizen: citizen<citizenType> = {
-    name: "Rajib",
-    age: 54,
-    citizenType: citizenType.rich,
-};
-
-console.log(newCitizen);
-
-// NOTE: think of enums as set of prebuilt types. and when we use it, it returns the index of the type that we selected.
+// NOTE: tuples are just arrays that we can set type for each index. We can use all the array methods in tuples.

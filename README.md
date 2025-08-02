@@ -62,3 +62,7 @@ When we don't know what the type of a variable that's inside the interface we're
 # Lesson 14
 
 Enums are set of prebuilt types. And when we use it, it returns the index of the type that we selected.
+
+# Lesson 15
+
+Tuples are just arrays that we can set type for each index. We can use all the array methods in tuples.
