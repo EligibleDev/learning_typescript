@@ -1,25 +1,35 @@
-// interfaces
-interface monitor {
-    res: number | string;
-    size: number;
+// using generics
+
+type applicant = {
+    age: number;
+    name: string;
+};
+
+const citizen = <T extends applicant>(person: T) => {
+    console.log(`create NID card for ${person.age} year old ${person.name}`);
+};
+
+const newCitizen = {
+    name: "Rahul",
+    age: 18,
+};
+
+citizen(newCitizen);
+
+// using generics inside interfaces
+
+interface apiRes<T> {
+    ok: boolean;
+    status: number;
+    data: T;
 }
 
-const buildMonitor = (monitor: monitor) => {
-    const res = monitor.res;
-    const size = monitor.size;
+type dataType = {}[];
 
-    return `${res}, ${size} inch Monitor `;
+const newResponse: apiRes<dataType> = {
+    ok: true,
+    status: 200,
+    data: [{}, {}],
 };
 
-buildMonitor({ res: "1200hz", size: 19 });
-// buildMonitor({res: "1200hz", size: 19, brightness:12})
-// NOTE: error because this will has an extra parameter. but if we pass on a extra property inside another object it will not mind. but surely check for the ones that really needs. This is because javascripts pass by reference or something.
-
-const monitorWithExtraBrightness = {
-    res: "1400hz",
-    size: 21,
-    brightness: 16,
-};
-
-buildMonitor(monitorWithExtraBrightness);
-// NOTE: this will not give error cuz im passing the reference not the object itself. but it will check the mandatory parameters though.
+// NOTE: when we don't know what the type of a variable that's inside the interface we're building, we can use the <T> to take the type from the programmer that will use the interface in future.

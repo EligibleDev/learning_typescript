@@ -54,3 +54,7 @@ We can create better signatures with class in typescript.
 # Lesson 12
 
 When working with interfaces we will face error when we pass an extra parameter. but if we pass on a extra property inside another object and pass the name of the object in the parameter instead of the object itself, it will not mind. But it will surely check for the ones that really needs. This is because javascripts pass by reference or something.
+
+# Lesson 13
+
+When we don't know what the type of a variable that's inside the interface we're building, we can use the <T> to take the type from the programmer that will use the interface in future.

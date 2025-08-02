@@ -1,8 +1,17 @@
-let userDetails;
-userDetails = (nid, user) => {
-    console.log(`${user === null || user === void 0 ? void 0 : user.name}s nid number is ${nid}`);
+// using generics
+const citizen = (person) => {
+    console.log(`create NID card for ${person.age} year old ${person.name}`);
 };
-userDetails(234234234, { name: "Razib", age: 34 });
+const newCitizen = {
+    name: "Rahul",
+    age: 18,
+};
+citizen(newCitizen);
+const newResponse = {
+    ok: true,
+    status: 200,
+    data: [{}, {}],
+};
 export {};
-// NOTE: we can set-up the type of the parameters and return before declaring the function with function signatures.
+// NOTE: when we don't know what the type of a variable that's inside the interface we're building, we can use the <T> to take the type from the programmer that will use the interface in future.
 //# sourceMappingURL=app.js.map
