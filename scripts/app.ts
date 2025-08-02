@@ -1,35 +1,25 @@
-// using generics
+// enums
 
-type applicant = {
-    age: number;
-    name: string;
-};
-
-const citizen = <T extends applicant>(person: T) => {
-    console.log(`create NID card for ${person.age} year old ${person.name}`);
-};
-
-const newCitizen = {
-    name: "Rahul",
-    age: 18,
-};
-
-citizen(newCitizen);
-
-// using generics inside interfaces
-
-interface apiRes<T> {
-    ok: boolean;
-    status: number;
-    data: T;
+enum citizenType {
+    illiterate,
+    poor,
+    middleClass,
+    rich,
+    billionaire,
 }
 
-type dataType = {}[];
+interface citizen<T> {
+    name: string;
+    age: number;
+    citizenType: T;
+}
 
-const newResponse: apiRes<dataType> = {
-    ok: true,
-    status: 200,
-    data: [{}, {}],
+const newCitizen: citizen<citizenType> = {
+    name: "Rajib",
+    age: 54,
+    citizenType: citizenType.rich,
 };
 
-// NOTE: when we don't know what the type of a variable that's inside the interface we're building, we can use the <T> to take the type from the programmer that will use the interface in future.
+console.log(newCitizen);
+
+// NOTE: think of enums as set of prebuilt types. and when we use it, it returns the index of the type that we selected.

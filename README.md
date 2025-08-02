@@ -58,3 +58,7 @@ When working with interfaces we will face error when we pass an extra parameter.
 # Lesson 13
 
 When we don't know what the type of a variable that's inside the interface we're building, we can use the <T> to take the type from the programmer that will use the interface in future.
+
+# Lesson 14
+
+Enums are set of prebuilt types. And when we use it, it returns the index of the type that we selected.
