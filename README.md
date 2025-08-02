@@ -38,3 +38,7 @@ We can also set a default value of a parameter by using `=` after it. Tho its a 
 By default js returns `undefined` if we don't return anything ourself. But ts returns `void` by default.
 
 Typescript can also predict what will the type of the return of the function will be based on the operations we do inside the function.
+
+# Lesson 7
+
+Just like functions, we sometimes have to use the same types over and over again. which may lead to duplication of code. That's where type aliases comes in. We can create a alias and use it multiple times to reduce code duplication.
