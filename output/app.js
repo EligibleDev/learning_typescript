@@ -1,29 +1,14 @@
-let myFunc;
-myFunc = () => {
-    console.log("hellow");
+// NOTE: we can create schemas like this for our duplicated types so we don't have to write the same thing over again.
+const printUser = (user) => {
+    return console.log(user);
 };
-// parameters
-const printNames = (name1, name2) => {
-    console.log(`welcome ${name1} and ${name2}`);
+const newUser = {
+    id: 2304923489,
+    name: "Rohan",
+    age: 23,
+    hobby: "wrestling",
+    isAlive: true,
 };
-printNames("razib", "shajib");
-// printNames(3, "tomal")
-// NOTE: error cuz we can only pass strings in the parameters.
-// optional parameters
-const showNewStudents = (std1, std2) => {
-    const welcomeMsg = `welcome ${std1} ${std2 ? `and ${std2}` : ""}`;
-    console.log(welcomeMsg);
-};
-showNewStudents("belal", "umar");
-showNewStudents("habib");
-// NOTE: to make an optional parameter u have to use `?:` before setting the type
-// return type
-const multiply = (num1, num2) => {
-    return num1 * num2;
-    // return "string";
-    // NOTE: error because we are declaring that the function will return a number.
-};
-multiply(23, 43);
+printUser(newUser);
 export {};
-// NOTE: if we hover over this function it will now say => number since typescript can predict the outcome
 //# sourceMappingURL=app.js.map
