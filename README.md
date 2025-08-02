@@ -22,3 +22,7 @@ Same thing happens with objects and arrays as well. if we try to put a different
 # Lesson 4
 
 When defining objects and arrays we can set the type of each property or which types of elements the array will contain.
+
+# Lesson 5
+
+When we declare a variable it is set to any by default. or we can also explicitly set `: any` to the variable. But its not a good practice since the point of using typescript is to prevent this behavior.

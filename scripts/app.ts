@@ -1,44 +1,30 @@
+let variable: any;
+
+variable = 4;
+variable = "micky";
+variable = false;
+// NOTE: by setting any, we can set any type of value to the variable. kinda self explanatory.
+
+let anyType;
+
+anyType = [];
+anyType = {};
+anyType = "asdf";
+// NOTE: any is also set by default when we don't set any type to a variable.
+
 // arrays
-const arrayOfNumbers: number[] = [];
+let anyArray: any[] = [];
 
-arrayOfNumbers.push(234);
-// arrayOfNumbers.push("mikail")
-// NOTE: gonna show error cuz we defined the its gonna be a array of numbers.
-
-//union types in an array
-const stringNumberArray: (string | number)[] = [];
-stringNumberArray.push("bear");
-stringNumberArray.push(34);
-// stringNumberArray.push(true)
-// NOTE: will show errors cuz we only allowed the array to contain strings and numbers
+anyArray.push("Tarek");
+anyArray.push(345);
+anyArray.push(false);
 
 // objects
 let person: {
-    name: string;
-    age: number;
-    isMarried: boolean;
+    name: any;
+    age: any;
 };
 
-person = {
-    name: "mikail",
-    age: 34,
-    isMarried: true,
-};
+person = { name: true, age: [] };
 
-// person = {
-//     name: "mikail",
-//     age: 23,
-//     isMarried: [],
-// };
-// NOTE: the array is not set as an acceptable type for isMarried.
-
-// person = {
-//     name: "badhon"
-// }
-// NOTE: we didn't set the value of all the properties of the object.
-
-let object: object;
-
-object = [];
-// NOTE: this will not show an error because arrays are a type of object in javascript. so when defining
-// NOTE: objects we have to define a specific pattern like {} with properties.
+// NOTE: when using objects, we have don't have to assign any value to it unlike arrays
