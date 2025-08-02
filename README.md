@@ -46,3 +46,11 @@ Just like functions, we sometimes have to use the same types over and over again
 # Lesson 8
 
 We can set-up the type of the parameters and return before declaring the function with function signatures.
+
+# Lesson 9
+
+We can create better signatures with class in typescript.
+
+# Lesson 12
+
+When working with interfaces we will face error when we pass an extra parameter. but if we pass on a extra property inside another object and pass the name of the object in the parameter instead of the object itself, it will not mind. But it will surely check for the ones that really needs. This is because javascripts pass by reference or something.
