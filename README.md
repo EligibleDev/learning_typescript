@@ -42,3 +42,7 @@ Typescript can also predict what will the type of the return of the function wil
 # Lesson 7
 
 Just like functions, we sometimes have to use the same types over and over again. which may lead to duplication of code. That's where type aliases comes in. We can create a alias and use it multiple times to reduce code duplication.
+
+# Lesson 8
+
+We can set-up the type of the parameters and return before declaring the function with function signatures.

@@ -1,14 +1,8 @@
-// NOTE: we can create schemas like this for our duplicated types so we don't have to write the same thing over again.
-const printUser = (user) => {
-    return console.log(user);
+let userDetails;
+userDetails = (nid, user) => {
+    console.log(`${user === null || user === void 0 ? void 0 : user.name}s nid number is ${nid}`);
 };
-const newUser = {
-    id: 2304923489,
-    name: "Rohan",
-    age: 23,
-    hobby: "wrestling",
-    isAlive: true,
-};
-printUser(newUser);
+userDetails(234234234, { name: "Razib", age: 34 });
 export {};
+// NOTE: we can set-up the type of the parameters and return before declaring the function with function signatures.
 //# sourceMappingURL=app.js.map

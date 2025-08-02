@@ -1,23 +1,15 @@
-// type aliases
-type userType = {
-    id: number | string;
+// function signatures
+type userObj = {
     name: string;
     age: number;
-    hobby: string;
-    isAlive: boolean;
-};
-// NOTE: we can create schemas like this for our duplicated types so we don't have to write the same thing over again.
-
-const printUser = (user: userType) => {
-    return console.log(user);
 };
 
-const newUser = {
-    id: 2304923489,
-    name: "Rohan",
-    age: 23,
-    hobby: "wrestling",
-    isAlive: true,
+let userDetails: (id: string | number, user: userObj) => void;
+
+userDetails = (nid: string | number, user) => {
+    console.log(`${user?.name}s nid number is ${nid}`);
 };
 
-printUser(newUser);
+userDetails(234234234, { name: "Razib", age: 34 });
+
+// NOTE: we can set-up the type of the parameters and return before declaring the function with function signatures.
