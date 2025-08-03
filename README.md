@@ -104,3 +104,28 @@ Tuples are just arrays that we can set type for each index. We can use all the a
     ```
 
     to reduce the bundle size.
+
+# Chapter 3
+
+-   Optional parameter has to always come the last in the parameters list.
+
+-   If a parameter has a default value, it automatically becomes a optional parameter.
+
+-   Literal types are a really useful feature of typescript. It lets us have strict values of a variables values can be.
+
+    ```
+    type buttonSize: "sm" | "md" | "lg";
+
+    // We can also add all the regular types in here as well. So the possibilities are insane.
+    ```
+
+-   Another cool thing we can do inside typescript is to create template literals. How this work is, it'll create a something like a brute force with all the strict types that we got.
+
+    ```
+    type Class = "wizard" | "warrior" | "rogue";
+    type Race = "elf" | "human" | "dwarf";
+    type Hero = `Hero: ${Race} ${Class}`;
+    // Hero: elf wizard | Hero: elf warrior | Hero: elf rogue | Hero: human wizard | Hero: human warrior | Hero: human rogue | Hero: dwarf wizard | Hero: dwarf warrior | Hero: dwarf rogue
+    ```
+
+-
