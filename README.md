@@ -69,7 +69,7 @@ Tuples are just arrays that we can set type for each index. We can use all the a
 
 # Learning typescript with BootDev and Web Dev simplified.
 
-## Chapter 1
+## Chapter 1: Types
 
 -   Typescript can automatically detect what the type of the variable is when assigning.
 
@@ -80,3 +80,27 @@ Tuples are just arrays that we can set type for each index. We can use all the a
 -   `tsc` or typescript compiler is a tool built by the typescript team to remove all the typescript code and make a few tweak and finally turning everything into plain javascript code.
 
 -   The any type is kind of self explanatory. It tells typescript to skip all the type checking and let it just be a plain javascript variable.
+
+## Chapter 2: Functions
+
+-   In typescript, we can set the type of the parameters and the return. And if we don't return the type that we've set earlier it will show errors cause typescript can detect what the type of the return will be from the body of the function.
+
+-   Explicit typing when we ourselves define what the function will return when writing that function.
+
+    Meanwhile Implicit typing is when we let typescript decide what the type of the return will be based on what we do inside the functions body.
+
+-   Both explicit and implicit types has their advantages. And it depends on the situation who this function will be used by. If you're the only person that'll use this function, then there's no need to explicitly type what the will return, but if there're multiple people working on the same codebase, then there's gonna be a problem and we should explicitly type what the return type will be.
+
+-   If a function doesn't have a return value, then typescript will set the return type to `void`. We can provide the void return explicitly typed or let typescript implicitly decide what the return values type will be.
+
+-   Function types/signatures are the type structure of what will be the type of the parameters and return value.
+
+-   We can create predefined types for our variables. Make sure to write the in PascalCase.
+
+-   When importing types created in another file, we should use `import type` syntax like this:
+
+    ```
+    import type { User, Post } from "./models";
+    ```
+
+    to reduce the bundle size.
