@@ -105,7 +105,7 @@ Tuples are just arrays that we can set type for each index. We can use all the a
 
     to reduce the bundle size.
 
-# Chapter 3: Unions
+## Chapter 3: Unions
 
 -   Optional parameter has to always come the last in the parameters list.
 
@@ -128,7 +128,7 @@ Tuples are just arrays that we can set type for each index. We can use all the a
     // Hero: elf wizard | Hero: elf warrior | Hero: elf rogue | Hero: human wizard | Hero: human warrior | Hero: human rogue | Hero: dwarf wizard | Hero: dwarf warrior | Hero: dwarf rogue
     ```
 
-# Chapter 4: Arrays
+## Chapter 4: Arrays
 
 -   Defining array types is easy
 
@@ -153,3 +153,80 @@ Tuples are just arrays that we can set type for each index. We can use all the a
     ```
 
 -   By default an array has the `any` type. But as we continue to push stuff into the array typescript evolves the array automatically to the types of elements that we push inside the array.
+
+## Chapter 5: Objects
+
+-   We can have optional properties for objects just like optional parameters
+
+    ```
+    type CarType = {
+        seat: number,
+        engine: string,
+        airbag?: boolean
+        // Optional property
+    }
+    ```
+
+-   Everything in javascript is an object under the hood. So when we assign a variable with an empty object, we can set everything inside it. So we must provide the types when defining objects in typescript.
+
+-   If multiple objects has the same property with different fixed values then we can use discriminated unions. How this works is:
+
+    ```
+    type MultipleChoiceLesson = {
+        kind: "multiple-choice"; // Discriminant property
+        question: string;
+        studentAnswer: string;
+        correctAnswer: string;
+    };
+
+    type CodingLesson = {
+        kind: "coding"; // Discriminant property
+        studentCode: string;
+        solutionCode: string;
+    };
+
+    // Here we have the 2 different object type with a common property and we can use the discriminated union to work with them.
+
+    type Lesson = MultipleChoiceLesson | CodingLesson;
+
+    function isCorrect(lesson: Lesson): boolean {
+        switch (lesson.kind) {
+            case "multiple-choice":
+                return lesson.studentAnswer === lesson.correctAnswer;
+            case "coding":
+                return lesson.studentCode === lesson.solutionCode;
+        }
+    }
+    ```
+
+-   `Sets` are a type of array that doesn't have any duplicated value in them. We can define the types of elements with `generics` just like with arrays. But sets has its own properties like `array.length` we have `set.size`
+
+-   `Maps` are a collection of key value pairs that comes with typescript.
+
+-   When defining objects sometimes we don't know what the key and value are. That'w where Dynamic keys comes in
+
+    ```
+    type UserMetrics = {
+        [key: string]: number;
+    };
+
+    // Or we can use this syntax
+
+    type UserMetrics2 = Record<string, number>
+    ```
+
+-   when defining types we can set if a property is readonly or not. It sometimes useful.
+
+    ```
+    type User = {
+        readonly email: string;
+    }
+    ```
+
+-   By setting `as const` at the end of any variable, we can tell typescript that the value inside this variable is absolute. Meaning we're not only making it readonly, we're also restricting all sorts of alterations in that variable.
+
+    we also have the `Object.freeze()` function in javascript but it't not as powerful as `as const`. `Object.freeze()` is compile-time and run-time immutable.
+
+-   If we want to have extra properties inside our object but also follow a certain type then we can use the `satisfies` keyword with that type instead of setting the type with that variable.
+
+-   Function overloads are another cool feature of typescript. Imagine you have a function with 3 parameters ans 2 of them are optional. Now when calling the function, you either want it to be called with only the main parameter or with all the parameters. No other variations. This is where function overloads comes in.
