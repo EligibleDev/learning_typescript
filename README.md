@@ -105,7 +105,7 @@ Tuples are just arrays that we can set type for each index. We can use all the a
 
     to reduce the bundle size.
 
-# Chapter 3
+# Chapter 3: Unions
 
 -   Optional parameter has to always come the last in the parameters list.
 
@@ -128,4 +128,28 @@ Tuples are just arrays that we can set type for each index. We can use all the a
     // Hero: elf wizard | Hero: elf warrior | Hero: elf rogue | Hero: human wizard | Hero: human warrior | Hero: human rogue | Hero: dwarf wizard | Hero: dwarf warrior | Hero: dwarf rogue
     ```
 
--
+# Chapter 4: Arrays
+
+-   Defining array types is easy
+
+    ```
+    const arr: (string | number)[] =[]
+    // An array of string or number elements
+    ```
+
+-   We can also define array type with generics like
+
+    ```
+    const arr: Array<string> = []
+    ```
+
+-   We can use rest parameters to take parameters from a function and directly put them in an array:
+
+    ```
+    const setNameAndHobbies = (name:string, ...hobbies:string[]) =>{}
+    // This will use the first string parameter as name and all the others will get pushed in the hobbies array.
+
+    setNameAndHobbies("Assad", "Fishing", "Running", "Painting")
+    ```
+
+-   By default an array has the `any` type. But as we continue to push stuff into the array typescript evolves the array automatically to the types of elements that we push inside the array.
