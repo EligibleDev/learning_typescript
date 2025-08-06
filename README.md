@@ -263,3 +263,13 @@ Tuples are just arrays that we can set type for each index. We can use all the a
     If we need to do that, then we can set the new type as an object and the old types as properties of the new one.
 
 -   If we forget to handle some cases when dealing with conditions, the the cases that we forget becomes never type.
+
+## Chapter 8: Interfaces
+
+-   If we have multiple interfaces with the same name, typescript will not show an error rather merge them all together into one in compile time.
+
+    But sometimes it comes in handy when we want to alter the built-in types like the `window`.
+
+-   Typescript prefers to use interfaces over intersections in case of merging because it compiles faster and keeps things snappy.
+
+-   We can actually merge types and interfaces together.
