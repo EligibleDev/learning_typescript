@@ -301,3 +301,17 @@ Tuples are just arrays that we can set type for each index. We can use all the a
 
     // It doesn't create a new parameter
     ```
+
+## Chapter 12: Utility Types
+
+-   Utility types comes in handy when we created a type and we need a slightly modified version of that type somewhere in along the application.
+
+-   With partial utility type, we can make a types every property optional.
+
+-   Required utility types make every property required. Kinda self explanatory.
+
+-   Readonly.
+
+-   Pick lets us pick certain properties from a type.
+
+-   Omit is literally opposite of pick.
