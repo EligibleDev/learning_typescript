@@ -230,3 +230,36 @@ Tuples are just arrays that we can set type for each index. We can use all the a
 -   If we want to have extra properties inside our object but also follow a certain type then we can use the `satisfies` keyword with that type instead of setting the type with that variable.
 
 -   Function overloads are another cool feature of typescript. Imagine you have a function with 3 parameters ans 2 of them are optional. Now when calling the function, you either want it to be called with only the main parameter or with all the parameters. No other variations. This is where function overloads comes in.
+
+## Chapter 6: Tuples
+
+-   When working with something that needs to be in a certain order, we need to use tuples instead of objects.
+
+-   We can also set labels, optional properties in tuples just like with objects.
+
+## Chapter 7: Intersections
+
+-   Intersections allows us to create new types by adding new properties to existing types.
+
+    ```
+    type Teacher = {
+        name: string,
+        subject: string,
+    }
+
+    type GoodTeacher = Teacher & {
+      isGood: boolean
+    }
+
+    const teacher: GoodTeacher = {
+      name: "Rashid",
+      subject: "English",
+      isGood: true
+    }
+    ```
+
+    But if we have 2 types and wanted to merge them together, they mustn't have the same property with literal types. Or the whole new type becomes a `never`.
+
+    If we need to do that, then we can set the new type as an object and the old types as properties of the new one.
+
+-   If we forget to handle some cases when dealing with conditions, the the cases that we forget becomes never type.
