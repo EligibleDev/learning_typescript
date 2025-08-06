@@ -273,3 +273,19 @@ Tuples are just arrays that we can set type for each index. We can use all the a
 -   Typescript prefers to use interfaces over intersections in case of merging because it compiles faster and keeps things snappy.
 
 -   We can actually merge types and interfaces together.
+
+## Chapter 9: Enums
+
+-   In typescript all the code gets removed and only plain javascript stays. But that doesn't happen with enums. Some sort of typescript code stays in there for enums. That's why a lot of people don't like them.
+
+## Chapter 10: Type Narrowing
+
+-   Type Narrowing is essentially typescripts ability to predict the type of the variable based on certain actions.
+
+-   The `unknown` type is when typescript doesn't know what the type of a variable is. So if we wanted to do something with it, typescript would be really restrictive.
+
+    Think of `any` as turning typescript off and `unknown` as idk what it will be yet.
+
+-   If typescript is automatically showing an error and you know that this variable is another type than the one that's typescript saying it is, you can use the `as` keyword to skip typescripts safety.
+
+    And even if it doesn't let you set that type you can first set it as unknown then as the type you want.
