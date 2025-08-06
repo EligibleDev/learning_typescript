@@ -289,3 +289,15 @@ Tuples are just arrays that we can set type for each index. We can use all the a
 -   If typescript is automatically showing an error and you know that this variable is another type than the one that's typescript saying it is, you can use the `as` keyword to skip typescripts safety.
 
     And even if it doesn't let you set that type you can first set it as unknown then as the type you want.
+
+## Chapter 11: Classes
+
+-   To make it private in typescript we can use the `private` keyword, But it is recommended to use the javascript built-in `#` to make it private inside classes.
+
+-   If we have a function inside a class and we want to rename the `this` keyword with something else we could do that like:
+
+    ```
+    const functionInsideClass = (this:thisFunction, otherParameters) => {}
+
+    // It doesn't create a new parameter
+    ```
