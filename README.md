@@ -315,3 +315,11 @@ Tuples are just arrays that we can set type for each index. We can use all the a
 -   Pick lets us pick certain properties from a type.
 
 -   Omit is literally opposite of pick.
+
+## Chapter 13: Generics
+
+-   When we don't know yet what type of data we're working with and we want the future developer to pass on the type when declaring a variable, we can use generics.
+
+-   If we're working with objects and we want our generic to meet a minimum requirement we can use the extends keyword and point out to a type that we wanna meet. It kinda works like the satisfied keyword.
+
+-   We can use generics with not only functions but also types and interfaces if we want.
