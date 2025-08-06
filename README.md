@@ -323,3 +323,17 @@ Tuples are just arrays that we can set type for each index. We can use all the a
 -   If we're working with objects and we want our generic to meet a minimum requirement we can use the extends keyword and point out to a type that we wanna meet. It kinda works like the satisfied keyword.
 
 -   We can use generics with not only functions but also types and interfaces if we want.
+
+## Chapter 14: Conditional Types
+
+-   Conditional types are mainly used by library authors.
+
+-   Conditional types are defined by ternaries.
+
+## Chapter 15: Local Development
+
+-   We can control everything about typescript inside the `tsconfig.json` file.
+
+-   Declaration files contains our type information. They are `.d.ts` files.
+
+-   If we're facing any unexpected type related errors, restarting the typescript server might help :)
